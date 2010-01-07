@@ -138,7 +138,7 @@ if ($mode eq "new") {
 %       my $selected = ($ARGS{subsys} && $name eq $ARGS{subsys}) || (!$ARGS{subsys} && $name eq '_MEMBER_SUBSYS');
 %       (my $safe_sub = $name) =~ s/\s|\|/_/g;   # Replace spaces and pipes with _
         <div id="subsys_<% $safe_sub %>" class="tab<% $selected ? ' selected' : '' %>">
-        <a href="#" onclick="subsysTabs.switchTab(this.parentNode); return false"><% $name eq '_MEMBER_SUBSYS' ? 'Default' : $name %></a>
+        <a href="#" onclick="subsysTabs.switchTab(this.parentNode); return false"><% $name eq '_MEMBER_SUBSYS' ? $lang->maketext('Default') : $lang->maketext($name) %></a>
         </div>
 %   }
     </div>
